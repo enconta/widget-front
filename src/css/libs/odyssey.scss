@@ -1,0 +1,246 @@
+/*--------------------------------------------------
+  
+  Odyssey v1.4.2
+  SCSS/SASS template
+  https://github.com/Jmz7v/Odyssey.scss
+  MIT License
+
+  Made by Julio Montaño
+  @jmz7v
+    
+--------------------------------------------------*/
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+}
+
+body, html {
+  width: 100%;
+  height: 100%;
+  min-width: 100%;
+  min-height: 100%;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+
+
+/*--------------------------------------------------
+  Variables and Mixins
+--------------------------------------------------*/
+
+$content-max-width: 960px;
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+       -o-border-radius: $radius;
+          border-radius: $radius;
+}
+
+@mixin transition($prop) {
+  -webkit-transition: $prop;
+     -moz-transition: $prop;
+       -o-transition: $prop;
+          transition: $prop; 
+}
+
+@mixin opacity($value) {
+  filter: alpha(opacity=$value);
+           -moz-opacity: $value;
+                opacity: $value;
+}
+
+@mixin border-box {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+@mixin box-shadow($prop) {
+  -webkit-box-shadow: $prop;
+  -moz-box-shadow: $prop;
+  -o-box-shadow: $prop;
+  box-shadow: $prop;
+}
+
+@mixin vertical-center {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+@mixin preserve-3d {
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+@mixin border-box {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+@mixin circled {
+  -webkit-border-radius: 50%;
+   -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+     -o-border-radius: 50%;
+      border-radius: 50%;
+}
+
+@mixin unselectable {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; 
+}
+
+@mixin nowrap {
+  white-space: nowrap;
+}
+
+@mixin cursor-default {
+  cursor: default;
+}
+
+/*--------------------------------------------------
+  Responsive YouTube video
+--------------------------------------------------*/
+
+.embed-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 30px;
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+  height: auto;
+}
+
+.embed-container iframe,
+.embed-container object,
+.embed-container embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/*--------------------------------------------------
+  Add-on classes
+--------------------------------------------------*/
+
+.content-max-width, [content-max-width] {
+  max-width: $content-max-width;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.border-box, [border-box] {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.circled, [circled] {
+  -webkit-border-radius: 50%;
+     -moz-border-radius: 50%;
+      -ms-border-radius: 50%;
+       -o-border-radius: 50%;
+          border-radius: 50%;
+}
+
+.espacio-small:after, [espacio-small]:after {
+  display: block;
+  content: "";
+  height: 0.5rem;
+}
+.espacio-medium:after, [espacio-medium]:after {
+  display: block;
+  content: "";
+  height: 1.5rem;
+}
+.espacio-large:after, [espacio-large]:after {
+  display: block;
+  content: "";
+  height: 3rem;
+}
+.espacio-xlarge:after, [espacio-xlarge]:after {
+  display: block;
+  content: "";
+  height: 5rem;
+}
+.espacio-xxlarge:after, [espacio-xxlarge]:after {
+  display: block;
+  content: "";
+  height: 7rem;
+}
+.espacio-sick:after, [espacio-sick]:after {
+  display: block;
+  content: "";
+  height: 12rem;
+}
+
+.text-align-center, [text-align-center] {
+  width: 100%;
+  text-align: center;
+}
+
+.text-align-center-important, [text-align-center-important] {
+  width: 100%;
+  text-align: center!important;
+}
+
+.preserve-3d {
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+.vertical-center {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.pull-bottom {
+  vertical-align: bottom;
+}
+
+.pull-text-bottom {
+  vertical-align: text-bottom;
+}
+
+.unselectable {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: default;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.cursor-default {
+  cursor: default;
+}
+
+.is-hidden {
+  display: none;
+}

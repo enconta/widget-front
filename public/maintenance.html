@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Estamos en mantenimiento</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <style>
+html {
+    height: 100%;
+}
+
+  body {
+    text-align: center;
+    font-family: 'Rubik', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+
+  .maintenance {
+    width: 100vw;
+    padding: 1rem;
+  }
+
+  .maintenance__text {
+    font-size: 20px;
+    color: #4a4a4a;
+    font-weight: normal;
+    line-height: 1.5rem;
+    letter-spacing: .15px;
+    margin: 0;
+  }
+
+  .maintenance__logo {
+      width: 70%;
+      margin-bottom: 2rem;
+  }
+
+  .maintenance__image {
+      width: 100%;
+      margin-top: 2rem;
+  }
+
+  @media (min-width: 768px) {
+      .maintenance__text{
+        font-size:2rem;
+        line-height: 2.25rem;
+        letter-spacing: .25px;
+      }
+
+      .maintenance__logo{
+        width: 60%;   
+    }
+  }
+
+  @media (min-width: 1200px) {
+      .maintenance__text{
+        font-size:1.5rem;
+        line-height: 1.5rem;
+        letter-spacing: .15px;
+      }
+
+      .maintenance__logo{
+        width: 30%   
+    }
+    .maintenance__image {
+      width: 60%;
+      margin-top: 2rem;
+  }
+  }
+
+
+
+  </style>
+</head>
+
+<body>
+   <div class='maintenance'>
+    <img class="maintenance__logo" src='img/logo-enconta-b.png'>
+        <p class="maintenance__text">Estamos en mantenimiento,</p>
+        <p class="maintenance__text">regresamos en unos minutos.</p>
+        <img class="maintenance__image" src="img/login-background.svg">
+    </div>
+</body>
+</html>

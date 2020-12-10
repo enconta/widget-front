@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    "target": "es2018",
+    "module": "esnext",
+    "allowSyntheticDefaultImports": true,
+    "jsx": "react",
+    "checkJs": true,
+    "noEmit": true,
+    "noImplicitThis": true,
+    "strictNullChecks": true,
+    "noImplicitAny": false,
+    "alwaysStrict": true,
+    "strict": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "baseUrl": "./src",
+    "paths": {
+      "api": ["api/"],
+      "actions/*": ["actions/*"],
+      "stores": ["stores/*"],
+      "shared/*": ["components/app/shared/*"],
+      "utils": ["utils/"],
+      "appsignal": ["appSignal/"]
+    }
+  },
+  "exclude": ["node_modules", "build", "alias.js", "*/serviceWorker.js"]
+}

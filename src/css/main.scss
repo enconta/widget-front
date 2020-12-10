@@ -1,0 +1,211 @@
+/*
+ *  Enconta App CSS
+ */
+
+// Import Bulma initial variables
+@import "libs/bulma/sass/utilities/initial-variables";
+
+// Define custom colors and fonts
+@import "components/colors";
+$fontFamily: "Rubik", sans-serif;
+$fontFamilyMono: "Anonymous Pro", monospace;
+
+// Assign custom variables to Bulma
+$family-primary: $fontFamily;
+$family-code: $fontFamilyMono;
+
+$black: $enconta-black;
+
+$primary: $enconta-pink;
+$info: $enconta-olympic;
+$success: $enconta-dark-green;
+$danger: $enconta-red;
+
+$light: $enconta-light-gray;
+
+$link: $info;
+$link-visited: $enconta-purple;
+$link-hover: darken($link, 2.5%);
+
+$input-focus-border-color: $enconta-blue;
+$input-focus-box-shadow-color: rgba($enconta-blue, 0.25);
+
+.Select.is-focused:not(.is-open) > .Select-control {
+  border-color: $input-focus-border-color;
+  box-shadow: $input-focus-box-shadow-color;
+}
+
+/*
+ *  Libraries
+ */
+@import "libs/odyssey";
+@import "libs/bulma/bulma";
+@import "libs/react-select";
+
+ $standardPadding: 1.6rem;
+ $topbarHeight: 3.438rem;
+ $mainPadding: 1.6rem;
+ $floatingWindowBackground: $enconta-white;
+ $floatingWindowWidth: 320px;
+ $floatingShadow: -2px 6px 15px 0 rgba($enconta-black, 0.3);
+ $sidebarWidth: 211px;
+
+/*
+ *  Components
+ */
+ @import 'components/variables';
+@import "components/helpers";
+@import "components/pages";
+@import "components/modifiers";
+@import "components/mainMenu";
+@import "components/topbar";
+@import "components/table";
+@import "components/announcements";
+@import "components/logo";
+@import "components/datepicker";
+@import "components/select-file";
+@import "components/notification";
+@import "components/about";
+@import "components/stepper";
+@import "components/commons";
+@import "components/notifications-list";
+@import "components/button";
+@import "components/card";
+@import "components/modal";
+@import "components/paginator";
+@import "components/concepts";
+@import "components/tabs";
+@import "components/iconButton";
+@import "components/status-icon";
+@import "components/typography";
+@import "components/textField";
+@import "components/reports";
+@import "components/content-page";
+@import "components/wizard";
+@import "components/onboarding";
+@import "components/input";
+@import "components/dropzone";
+@import "components/comments";
+@import "components/steps";
+@import "components/accountingPeriod";
+@import "components/checkbox";
+@import "components/custom-bulma";
+@import "components/accordion";
+@import "components/resultBar";
+@import "components/filter";
+@import "components/radioButton";
+@import "components/inventoryCard";
+@import "components/tableCard";
+@import "components/animations";
+@import 'components/stepperSmartSync';
+@import 'components/register';
+@import 'components/serviceList.scss';
+@import 'components/paymentPremium.scss';
+@import 'components/kebabMenu';
+@import 'components/banner.scss';
+@import 'components/plans.scss';
+@import 'components/cancelPremium.scss';
+@import 'components/paymentMethod.scss';
+
+/*
+ *  Global settings
+ */
+
+* {
+  font-family: $fontFamily;
+  ::selection {
+    background: $enconta-turquoise;
+    color: $enconta-white;
+  }
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+#app {
+  position: relative;
+  height: 100%;
+}
+
+.app-content {
+  background-color: $enconta-light-gray;
+  min-height: 100%;
+  z-index: 0;
+  width: 100%;
+  position: relative;
+  @media (min-width: 768px) {
+    min-height: 100vh;
+  }
+  @media (min-width: 1200px) {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns:  211px 1fr;
+    grid-template-rows:  55px 1fr;
+    grid-gap: 1.5rem;
+    grid-template-areas:
+      "topbar topbar"
+      "sidebar main";
+  }
+}
+
+.main-container {
+  grid-area: main;
+  @include display-flex;
+  @include flex-direction(column);
+  height: 100%;
+
+  &--warning-active{
+    margin-top: 1rem;
+  }
+  &__children{
+    @include flex(1, 0, auto);
+    @include display-flex;
+    @include flex-direction(column);
+  }
+  .footer{
+    @include flex-shrink;
+    display: grid;
+    grid-gap: .5rem;
+    grid-column-gap: 1rem;
+    padding: 1.5rem 1rem 2.5rem ;
+    grid-template-columns: repeat(auto-fit, minmax(136px, 1fr));
+    align-items: center;
+    &__item{
+      color: $enconta-dark-gray;
+      height: 0.75rem;
+      @include display-flex;
+      @include align-items(center);
+      &:not(:last-of-type){
+        margin-right: .5rem ;
+      }
+      @media (min-width: 768px) {
+        &+ .footer__item {
+          border-left: 1px solid $enconta-dark-gray;
+          padding-left: .5rem;
+       }
+      }      
+    }
+    @media (min-width: 768px) {
+      @include display-flex;
+      @include align-items(center);
+      padding-bottom: 4.5rem ;
+    }
+    @media (min-width: 1024px) {
+      @include display-flex;
+      @include align-items(center);
+      padding-bottom: 2.5rem ;
+    }
+
+  }
+  @media (min-width: 1200px) {
+    padding-right: 1.5rem;
+  }
+}
