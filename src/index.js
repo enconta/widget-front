@@ -1,6 +1,6 @@
 import React from 'react'
 import { render } from 'react-dom'
-import { Router, Route, Redirect, browserHistory } from 'react-router'
+import { Router, Route, browserHistory } from 'react-router'
 import ReactGa from 'react-ga'
 
 import EditClient from './components/app/views/editClient'
@@ -90,7 +90,7 @@ const routes = (
       content='list'
     />
     <Route
-      path='/nuevo/banco'
+      path='/'
       component={EditClient}
       tab='cuentas-de-pago'
       title='Sincronización de cuentas automáticas'
@@ -172,7 +172,6 @@ const routes = (
      * which looks if a session is active in the browser and if so
      * will replace its own route for /dashboard
      */}
-
   </Route>
 )
 

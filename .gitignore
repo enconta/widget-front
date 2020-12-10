@@ -1,0 +1,13 @@
+node_modules
+.DS_Store
+build
+npm-debug.log
+.sass-cache
+.idea
+public/css/main\.css
+public/css/main\.css\.map
+.env
+.env.test
+coverage
+yarn-error.log
+.eslintcache

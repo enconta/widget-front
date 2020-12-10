@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react'
-import { withRouter } from 'react-router' 
+import { withRouter } from 'react-router'
 import BanksSynchronizationActions from 'actions/smartsync'
 import BanksSynchronizationStores from 'stores/smartsync'
 
@@ -10,15 +10,18 @@ function getCurrentState () {
 }
 
 export class NewBank extends Component {
-  defaultState = {
-
-  }
+  defaultState = {}
 
   state = { ...this.defaultState, ...getCurrentState() }
 
   componentDidMount () {
     BanksSynchronizationActions.getWidgetToken()
     BanksSynchronizationStores.addChangeListener(this._onChange)
+  }
+
+  componentWillUnmount () {
+    BanksSynchronizationStores.removeChangeListener(this._onChange)
+    BanksSynchronizationActions.clearBank()
   }
 
   _onChange = () => {
@@ -39,6 +42,7 @@ export class NewBank extends Component {
 
   openBelvoWidget = () => {
     const { widgetToken } = this.state
+    console.log(widgetToken)
     belvoSDK // eslint-disable-line
       .createWidget(widgetToken, {
         locale: 'es',
@@ -55,15 +59,8 @@ export class NewBank extends Component {
       .build()
   }
 
-  
-
   render () {
-   
-    return (
-      <Fragment>
-        {this.openBelvoWidget()}
-      </Fragment>
-    )
+    return <Fragment>hola mundo</Fragment>
   }
 }
 

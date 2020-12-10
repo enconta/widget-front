@@ -1,12 +1,9 @@
-import React, { Fragment, Component } from 'react'
+import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { Link, browserHistory } from 'react-router'
 
 import NewBank from './synchronization'
 
 import SessionStore from 'stores/session'
-
-import EditClientActions from 'actions/editClient'
 
 function getCurrentState () {
   return {
@@ -30,25 +27,20 @@ class EditClient extends Component {
   }
 
   render () {
-    const { checkFeature } = this.state
-    const hasSynchronization = checkFeature.find(
-      feature => feature.key === 'synchronization'
-    )
     let content = null
     let button = null
-    switch (this.props.route.tab) {      
+    switch (this.props.route.tab) {
       case 'cuentas-de-pago':
-        switch (this.props.route.content) {          
+        switch (this.props.route.content) {
           case 'editSecond':
             content = <NewBank {...this.props} />
-            break         
+            break
         }
-        break     
+        break
     }
     return (
       <div>
         <div className='flex-between'>
-          <h1 className='headline'>Mi Empresa</h1>
           <div>{button}</div>
         </div>
         <p
